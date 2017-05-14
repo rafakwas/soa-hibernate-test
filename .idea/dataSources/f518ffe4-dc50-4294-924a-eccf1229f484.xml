@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - hibernate_test@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="hibernate_test">
+      <object-id>36073</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12413</object-id>
+    </database>
+    <database id="3" name="cukiernia">
+      <object-id>16385</object-id>
+    </database>
+    <database id="4" name="siatkowka">
+      <object-id>16442</object-id>
+    </database>
+    <database id="5" name="ralphigi">
+      <object-id>16507</object-id>
+    </database>
+    <database id="6" name="nalesniki">
+      <object-id>16876</object-id>
+    </database>
+    <database id="7" name="kwiaciarnia">
+      <object-id>17005</object-id>
+    </database>
+    <database id="8" name="testdb">
+      <object-id>17287</object-id>
+    </database>
+    <database id="9" name="test_kwiaciarnia">
+      <object-id>17288</object-id>
+    </database>
+    <database id="10" name="jpa_manytomany">
+      <object-id>34700</object-id>
+    </database>
+    <schema id="11" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>4747</introspection-state-number>
+      <introspection-timestamp>2017-05-14.13:55:55.124</introspection-timestamp>
+    </schema>
+    <schema id="12" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="13" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="14" parent="1" name="pg_temp_1">
+      <object-id>11816</object-id>
+    </schema>
+    <schema id="15" parent="1" name="pg_toast_temp_1">
+      <object-id>11817</object-id>
+    </schema>
+    <schema id="16" parent="1" name="information_schema">
+      <object-id>12121</object-id>
+    </schema>
+    <sequence id="17" parent="11" name="child_child_id_seq">
+      <object-id>36082</object-id>
+      <state-number>4747</state-number>
+    </sequence>
+    <sequence id="18" parent="11" name="parent_parent_id_seq">
+      <object-id>36074</object-id>
+      <state-number>4746</state-number>
+    </sequence>
+    <table id="19" parent="11" name="child">
+      <object-id>36084</object-id>
+      <state-number>4747</state-number>
+    </table>
+    <table id="20" parent="11" name="parent">
+      <object-id>36076</object-id>
+      <state-number>4747</state-number>
+    </table>
+    <column id="21" parent="19" name="child_id">
+      <state-number>4747</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;child_child_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="22" parent="19" name="parent_id">
+      <state-number>4747</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="23" parent="19" name="child_pkey">
+      <object-id>36088</object-id>
+      <columns>child_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="24" parent="19" name="child_pkey">
+      <object-id>36089</object-id>
+      <columns>child_id</columns>
+      <underlying-index>child_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="25" parent="19" name="child_parent__fk">
+      <object-id>36090</object-id>
+      <columns>parent_id</columns>
+      <ref-key>~.parent.parent_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="26" parent="20" name="parent_id">
+      <state-number>4746</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;parent_parent_id_seq&apos;::regclass)</default-expression>
+    </column>
+    <index id="27" parent="20" name="parent_pkey">
+      <object-id>36080</object-id>
+      <columns>parent_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="28" parent="20" name="parent_pkey">
+      <object-id>36081</object-id>
+      <columns>parent_id</columns>
+      <underlying-index>parent_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
